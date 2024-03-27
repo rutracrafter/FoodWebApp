@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="w-full h-full" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="w-full h-full bg-light-cream">
+    <div class="w-full h-[350px]">
+      <img id="menuToggleButton" class="w-[50px] h-[50px] hover:cursor-pointer absolute z-50 top-5 left-5" src="assets/MenuIcon.svg" onclick="toggleMenuHidden()" />
+      <nav id="menu" class="w-full flex justify-center items-center h-[350px] hidden bg-black bg-opacity-60 z-40">
+        <div class="flex flex-col justify-between w-[40%] h-[300px]">
+          <a class="w-full h-[60px] flex justify-center items-center bg-medium-cream hover:bg-dark-cream rounded-full" href="/">Home</a>
+          <a class="w-full h-[60px] flex justify-center items-center bg-medium-cream hover:bg-dark-cream rounded-full" href="/">Manual</a>
+          <a class="w-full h-[60px] flex justify-center items-center bg-medium-cream hover:bg-dark-cream rounded-full" href="/">About</a>
+          <a class="w-full h-[60px] flex justify-center items-center bg-medium-cream hover:bg-dark-cream rounded-full" href="/">Contact Us</a>
+        </div>
+      </nav>
+      <div class="w-full h-full absolute top-0 left-0 mt-24 -z-50">Rest of app goes here</div>
+    </div>
+    <script src="scripts/home.js"></script>
+  </body>
+</html>
