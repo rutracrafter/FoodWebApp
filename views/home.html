@@ -16,50 +16,51 @@
         <a class="w-full h-[60px] flex justify-center items-center bg-medium-cream hover:bg-dark-cream rounded-full sm:mx-4 drop-shadow-sm hover:drop-shadow-md" href="/">Contact Us</a>
       </div>
     </nav>
-    <div class="w-full h-[150px] bg-white flex flex-col justify-center items-center">
-      <input class="w-[80%] h-12 bg-medium-cream rounded-full text-center sm:w-[50%] lg:w-[40%]" value="Search for recipes" />
+    <div class="w-full h-[150px] flex flex-col justify-center items-center">
+      <input id="searchBar" class="w-[80%] h-12 bg-medium-cream rounded-full text-center sm:w-[50%] lg:w-[40%]" value="Search for Recipes" onfocus="clearSearchText()" oninput="updateSearchField(this.value)" onkeypress="searchEnter(event)" />
       <div class="w-[70%] h-10 flex justify-between items-center sm:w-[40%] lg:w-[30%]">
         <div class="relative w-16">
-          <p id="cuisine" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer hover:bg-dark-cream" onclick="toggleFilterCuisine()">Cuisine</p>
+          <p id="cuisine" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer hover:bg-dark-cream" onclick="toggleFilter('cuisine')">Cuisine</p>
           <div id="cuisine-dropdown" class="absolute bg-medium-cream w-24 -left-4 rounded-md flex flex-col justify-center items-center hidden">
-            <p id="cuisine-italian" class="w-full hover:bg-dark-cream text-center rounded-md">Italian</p>
-            <p id="cuisine-japanese" class="w-full hover:bg-dark-cream text-center rounded-md">Japanese</p>
-            <p id="cuisine-greek" class="w-full hover:bg-dark-cream text-center rounded-md">Greek</p>
-            <p id="cuisine-indian" class="w-full hover:bg-dark-cream text-center rounded-md">Indian</p>
+            <a id="cuisine-italian" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="cuisineSelection('italian')">Italian</a>
+            <a id="cuisine-japanese" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="cuisineSelection('japanese')">Japanese</a>
+            <a id="cuisine-greek" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="cuisineSelection('greek')">Greek</a>
+            <a id="cuisine-indian" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="cuisineSelection('indian')">Indian</a>
           </div>
         </div>
 
         <div class="relative w-16">
-          <p id="diet" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer hover:bg-dark-cream" onclick="toggleFilterDiet()">Diet</p>
+          <p id="diet" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer hover:bg-dark-cream" onclick="toggleFilter('diet')">Diet</p>
           <div id="diet-dropdown" class="absolute bg-medium-cream w-24 -left-4 rounded-md flex flex-col justify-center items-center hidden">
-            <p id="diet-veggie" class="w-full hover:bg-dark-cream text-center rounded-md">Veggie</p>
-            <p id="diet-vegan" class="w-full hover:bg-dark-cream text-center rounded-md">Vegan</p>
-            <p id="diet-pesca" class="w-full hover:bg-dark-cream text-center rounded-md">Pesca</p>
+            <p id="diet-veggie" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="dietSelection('vegetarian')">Veggie</p>
+            <p id="diet-vegan" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="dietSelection('vegan')">Vegan</p>
+            <p id="diet-pesca" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="dietSelection('pescetarian')">Pesca</p>
+            <p id="diet-keto" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="dietSelection('ketogenic')">Keto</p>
           </div>
         </div>
 
         <div class="relative w-16">
-          <p id="type" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer hover:bg-dark-cream" onclick="toggleFilterType()">Type</p>
+          <p id="type" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer hover:bg-dark-cream" onclick="toggleFilter('type')">Type</p>
           <div id="type-dropdown" class="absolute bg-medium-cream w-24 -left-4 rounded-md flex flex-col justify-center items-center hidden">
-            <p id="type-appetizer" class="w-full hover:bg-dark-cream text-center rounded-md">Appetizer</p>
-            <p id="type-entree" class="w-full hover:bg-dark-cream text-center rounded-md">Entree</p>
-            <p id="type-dessert" class="w-full hover:bg-dark-cream text-center rounded-md">Dessert</p>
+            <p id="type-appetizer" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="typeSelection('appetizer')">Appetizer</p>
+            <p id="type-entree" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="typeSelection('main course')">Entree</p>
+            <p id="type-dessert" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="typeSelection('dessert')">Dessert</p>
           </div>
         </div>
 
         <div class="relative w-16">
-          <p id="time" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer" onclick="toggleFilterTime()">Time</p>
+          <p id="time" class="text-center w-16 bg-medium-cream rounded-full hover:cursor-pointer hover:bg-dark-cream" onclick="toggleFilter('time')">Time</p>
           <div id="time-dropdown" class="absolute bg-medium-cream w-24 -left-4 rounded-md flex flex-col justify-center items-center hidden">
-            <p id="time-10" class="w-full hover:bg-dark-cream text-center rounded-md">&lt; 10 min</p>
-            <p id="time-20" class="w-full hover:bg-dark-cream text-center rounded-md">&lt; 20 min</p>
-            <p id="time-30" class="w-full hover:bg-dark-cream text-center rounded-md">&lt; 30 min</p>
-            <p id="time-60" class="w-full hover:bg-dark-cream text-center rounded-md">&lt; 60 min</p>
+            <p id="time-10" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="timeSelection('10')">&lt; 10 min</p>
+            <p id="time-20" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="timeSelection('20')">&lt; 20 min</p>
+            <p id="time-30" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="timeSelection('30')">&lt; 30 min</p>
+            <p id="time-60" class="w-full hover:bg-dark-cream text-center rounded-md" onclick="timeSelection('60')">&lt; 60 min</p>
           </div>
         </div>
       </div>
     </div>
 
-
+    <h1>test content</h1>
 
     <script src="scripts/home.js"></script>
   </body>
