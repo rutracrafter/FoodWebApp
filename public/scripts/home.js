@@ -218,3 +218,17 @@ function prevPage() {
       console.log('Error: ', error);
     })
 }
+
+module.exports = {
+  toggleMenuHidden: toggleMenuHidden,
+  toggleFilter: toggleFilter,
+  cuisineSelection: cuisineSelection,
+  dietSelection: dietSelection,
+  typeSelection: typeSelection,
+  timeSelection: timeSelection,
+  clearSearchText: clearSearchText,
+  updateSearchField: updateSearchField,
+  searchEnter: searchEnter,
+  nextPage: nextPage,
+  prevPage: prevPage,
+}

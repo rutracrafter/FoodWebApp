@@ -5,16 +5,18 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "rutracrafter",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.19.1",
+    "jest-environment-jsdom": "^29.7.0",
     "nodemon": "^3.1.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "tailwindcss": "^3.4.1"
   }
 }
