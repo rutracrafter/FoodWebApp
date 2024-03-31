@@ -8,4 +8,4 @@ If you would like to install this app to see it for yourself, please follow the 
 
 3) run `npm install` to set up the environment, this should install the necessary dependecies, however, if it does not, you can do so manually with `npm install ejs express jest-environment-jsdom nodemon jest tailwindcss`.
 
-4) run `nodemon` and the application show now be accessible at `http://localhost:3000/`. Enjoy!
+4) run `nodemon` and the application should now be accessible at `http://localhost:3000/`. Enjoy!
